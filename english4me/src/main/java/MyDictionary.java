@@ -15,4 +15,17 @@ public class MyDictionary {
     public long getSize(){
         return data.size();
     }
+
+    public Word worstKnownWord() {
+        float minRating = 1000;
+        Word result = null;
+        for(Word word : data){
+            if(minRating > word.getRating()) {
+                minRating = word.getRating();
+                result = word;
+            }
+        }
+
+        return result;
+    }
 }
